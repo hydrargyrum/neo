@@ -1,0 +1,30 @@
+#compdef neo
+# zsh auto-completion for neo
+# copy this file in /usr/share/zsh/vendor-completions/ or any other $fpath dir
+
+_arguments \
+	'(-a --async)'{-a,--async}'[Makes each column of characters scroll at an independent speed]' \
+	'(-b --bold)'{-b+,--bold=}'[Controls if and how neo displays bold characters]:choice [1]:((0\:off 1\:random\ \(default\) 2\:all))' \
+	'(-C --colorfile -c --color)'{-C+,--colorfile=}'[Read the colors from a file]: :_files' \
+	'(-C --colorfile -c --color)'{-c+,--color=}'[Sets the foreground text color]:color [green]:(green green2 green3 yellow orange red blue cyan gold rainbow purple pink pink2 vaporwave gray)' \
+	'(-D --defaultbg)'{-D,--defaultbg}'[Use the default terminal background color]' \
+	'(-d --density)'{-d+,--density=}'[Controls how many droplets will appear onscreen]:N [1.0]' \
+	'(-F --fullwidth)'{-F,--fullwidth}'[Use two columns per character]' \
+	'(-f --fps)'{-f+,--fps=}'[Sets a frame rate target]:N [60]' \
+	'(-G --glitchpct)'{-G+,--glitchpct=}'[Sets the percentage of characters onscreen that glitch]:percentage [10.0]' \
+	'(-g --glitchms)'{-g+,--glitchms=}'[Controls how often the characters on screen glitch]:N [300,400]]' \
+	'(-h --help)'{-h,--help}'[Shows the help message]' \
+	'(-l --lingerms)'{-l+,--lingerms=}'[Controls how long characters stay onscreen after they finish scrolling]:N [1,3000]' \
+	'(-M --shadingmode)'{-M+,--shadingmode=}'[Controls how neo assigns color values to characters on the screen]:choice [1]:((0\:random\ \(default\) 1\:gradient))' \
+	'(-m --message)'{-m+,--message=}'[Displays a message in the center of the screen]:message' \
+	'(-p --profile)'{-p,--profile}'[Turns on the profiling mode]' \
+	'(-r --rippct)'{-r+,--rippct=}'[Sets the percentage of droplets that stop scrolling before reaching the bottom of the screen]:percentage [33.0]' \
+	'(-S --speed)'{-S+,--speed=}'[Controls how fast characters scroll down the screen]:speed [8.0]' \
+	'(-s --screensaver)'{-s,--screensaver}'[If this option is set, neo will exit on the first key press]' \
+	'(-V --version)'{-V,--version}'[Displays the version, build date, copyright, and license]' \
+	--noglitch'[Disables character glitching]' \
+	--chars='[Tells neo to display Unicode characters between NUM1 and NUM2 inclusive]:CHAR,CHAR' \
+	--charset='[Sets the charset that is used to draw characters onto the screen]:flag:(ascii extended english dec decimal digits punc bin binary hex hexadecimal katakana greek cyrillic arabic hebrew devanagari braille runic)' \
+	--colormode='[Sets the color mode]:flag:((0\:mono 16\:16\ colors 32\:32-bit\ color 256\:256\ colors))' \
+	--maxdpc='[Sets the maximum number of droplets per column]:number [3]' \
+	--shortpct='[Sets the percentage of shortened droplets]:percentage [50.0]'
